@@ -1,0 +1,330 @@
+
+ <!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  
+    <title>notebook | lalalala1990</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="lalalala1990">
+    
+    <meta name="description" content="###string阈值选择：0.4,0.7.0.9蛋白间的相互作用 vs 单个蛋白在数据库中物种中的所有互作关系
+隐藏无链接的节点
+###cytoscapecontrol+z 撤
+节点属性表格关系对表格
+节点属性：第一列是节点，第二列是属性1，第二列是属性2。。。。。（每个节点相应的属性）
+###s">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="lalalala1990" title="lalalala1990"></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="lalalala1990">lalalala1990</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search">
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope="" itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/05/29/notebook/" title="notebook" itemprop="url">notebook</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="lalalala1990">lalalala1990</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2018-05-29T03:57:53.000Z" itemprop="datePublished">2018-05-29</time>
+    Updated:<time datetime="2019-06-14T08:28:34.448Z" itemprop="dateModified">2019-06-14</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HT-seq软件"><span class="toc-number">1.</span> <span class="toc-text">HT-seq软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-主要参数"><span class="toc-number">1.1.</span> <span class="toc-text">1.主要参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-备注"><span class="toc-number">1.2.</span> <span class="toc-text">2.备注</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ps"><span class="toc-number">2.</span> <span class="toc-text">ps</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ncbi下载参考序列格式说明"><span class="toc-number">2.1.</span> <span class="toc-text">ncbi下载参考序列格式说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stringtie-fpkm-转readcount脚本"><span class="toc-number">2.2.</span> <span class="toc-text">stringtie fpkm 转readcount脚本</span></a></li></ol></li></ol>
+		</div>
+		
+		<p>###string<br>阈值选择：0.4,0.7.0.9<br>蛋白间的相互作用 vs 单个蛋白在数据库中物种中的所有互作关系</p>
+<p>隐藏无链接的节点</p>
+<p>###cytoscape<br>control+z 撤</p>
+<p>节点属性表格<br>关系对表格</p>
+<p>节点属性：第一列是节点，第二列是属性1，第二列是属性2。。。。。（每个节点相应的属性）</p>
+<p>###svn<br>学习网址：<br><a href="http://www.runoob.com/svn/svn-commit.html" target="_blank" rel="noopener">http://www.runoob.com/svn/svn-commit.html</a></p>
+<pre><code>svn checkout https://117.115.179.102/svn/ --username=Lalala --password=lalalala 
+
+svn add HUMRNEPEMPEI-116
+
+cd HUMRNEPEMPEI-116/discovery
+
+svn commit -m HUMRNEPENPEI-140
+</code></pre><h2 id="HT-seq软件"><a href="#HT-seq软件" class="headerlink" title="HT-seq软件"></a>HT-seq软件</h2><p>输入为sam格式的文件，如果是paired-end数据必须按照reads名称排序（sort by name）。可采用samtools先对bam文件（tophat2的输出结果为bam）排序，再转换为sam。</p>
+<h3 id="1-主要参数"><a href="#1-主要参数" class="headerlink" title="1.主要参数"></a>1.主要参数</h3><blockquote>
+<p>-m  参数<br>计数模型，统计reads的时候对一些比较特殊的reads定义是否计入。包括：默认的union和intersection-strict、 intersection-nonempty</p>
+</blockquote>
+<blockquote>
+<p>-s 参数<br>reads是否匹配到同一条链上，默认：yes，可以设置no 、 reverse </p>
+</blockquote>
+<blockquote>
+<p>-t 参数<br>feature type 在gtf或者gff文件中，外显子为最小的定义单位，对基因计数，只需要将包含的外显子计数相加即可。 默认：exon</p>
+</blockquote>
+<blockquote>
+<p>-i参数<br>最终的计数单位，一般为基因。 默认为：gene_id   也可以设置转录本，但由于模型问题，计数效果不佳。</p>
+</blockquote>
+<blockquote>
+<p>-o参数<br>输出所有alignment的reads到一个sam文件中。可以不设置。</p>
+</blockquote>
+<h3 id="2-备注"><a href="#2-备注" class="headerlink" title="2.备注"></a>2.备注</h3><p>可以设置转录本，但由于模型问题，计数效果不佳。</p>
+<h2 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h2><h3 id="ncbi下载参考序列格式说明"><a href="#ncbi下载参考序列格式说明" class="headerlink" title="ncbi下载参考序列格式说明"></a>ncbi下载参考序列格式说明</h3><blockquote>
+<p>GenBank的flat file .gbk<br>GenBank的概要文件 .gbs<br>FASTA核酸文件   .fna<br>FASTA氨基酸文件 .faa<br>蛋白表 .ptt</p>
+</blockquote>
+<h3 id="stringtie-fpkm-转readcount脚本"><a href="#stringtie-fpkm-转readcount脚本" class="headerlink" title="stringtie fpkm 转readcount脚本"></a>stringtie fpkm 转readcount脚本</h3><p>之前主流分析软件：tophat2-cufflink,16年推出hisat2-stringtie-Ballgown后，rna分析流程update。hisat2-stringtie-Ballgown这一set，实测有两个问题：1.stringtie定量结果与cufflink相比，同一个转录本fpkm量较高；2.Ballgown只能对具有重复的样本进行差异分析，往往差异显著的基因较少，目标基因并为出现在差异显著组中，并且输入文件为fpkm。若进行差异软件更换， 一些差异分析软件输入文件为readcount值，因此需要将fpkm转换为readcount。官方推出<a href="http://ccb.jhu.edu/software/stringtie/index.shtml?t=manual#deseq" target="_blank" rel="noopener">转换脚本</a>,可进行转换。</p>
+<p>####unix命令</p>
+<p>###open .<br>输入命令open .可以用 Finder 打开当前的位置</p>
+<p>###control + L<br>你可以使用组合键control + L清屏</p>
+<p>###clear<br>清屏</p>
+<p>###关闭服务器<br>    sudo shutdown -Ph now</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2018/05/29/notebook/" data-title="notebook | lalalala1990" data-tsina="" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev">
+ <a href="/2018/06/02/auc/" title="auc">
+  <strong>PREVIOUS:</strong><br>
+  <span>
+  auc</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2017/08/22/bedtools/" title="bedtools">
+ <strong>NEXT:</strong><br> 
+ <span>bedtools
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HT-seq软件"><span class="toc-number">1.</span> <span class="toc-text">HT-seq软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-主要参数"><span class="toc-number">1.1.</span> <span class="toc-text">1.主要参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-备注"><span class="toc-number">1.2.</span> <span class="toc-text">2.备注</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ps"><span class="toc-number">2.</span> <span class="toc-text">ps</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ncbi下载参考序列格式说明"><span class="toc-number">2.1.</span> <span class="toc-text">ncbi下载参考序列格式说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stringtie-fpkm-转readcount脚本"><span class="toc-number">2.2.</span> <span class="toc-text">stringtie fpkm 转readcount脚本</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+
+  <div class="rsspart">
+	<a href="" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer">
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2019 
+		
+		<a href="http://yoursite.com" target="_blank" title="lalalala1990">lalalala1990</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>

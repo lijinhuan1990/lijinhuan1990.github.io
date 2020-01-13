@@ -1,0 +1,349 @@
+
+ <!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  
+    <title>auc | lalalala1990</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="lalalala1990">
+    
+    <meta name="description" content="ROC,AUC评估软件或算法生物信息软件实例评估讲解说明。可用auc对circRNA预测软件的评估,此类评估近期已有相关文献进行了报道，可作为进阶训练。
+1.AUC说明Auc通过将预测算法或软件的输出结果与已被验证的数据集对比进行评估。
+已被证实的数据集包括正反两方面的结果，TPR与FPR反映预测算">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="lalalala1990" title="lalalala1990"></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="lalalala1990">lalalala1990</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search">
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope="" itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/06/02/auc/" title="auc" itemprop="url">auc</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="lalalala1990">lalalala1990</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2018-06-02T03:03:19.000Z" itemprop="datePublished">2018-06-02</time>
+    Updated:<time datetime="2019-06-14T08:40:47.093Z" itemprop="dateModified">2019-06-14</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ROC-AUC评估软件或算法"><span class="toc-number">1.</span> <span class="toc-text">ROC,AUC评估软件或算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-AUC说明"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.AUC说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-实例数据"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.实例数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-ROC曲线说明"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.ROC曲线说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-ROC曲线展示"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.ROC曲线展示</span></a></li></ol></li></ol>
+		</div>
+		
+		<h1 id="ROC-AUC评估软件或算法"><a href="#ROC-AUC评估软件或算法" class="headerlink" title="ROC,AUC评估软件或算法"></a>ROC,AUC评估软件或算法</h1><pre><code>生物信息软件实例评估讲解说明。可用auc对circRNA预测软件的评估,此类评估近期已有相关文献进行了报道，可作为进阶训练。
+</code></pre><h3 id="1-AUC说明"><a href="#1-AUC说明" class="headerlink" title="1.AUC说明"></a>1.AUC说明</h3><pre><code>Auc通过将预测算法或软件的输出结果与已被验证的数据集对比进行评估。
+已被证实的数据集包括正反两方面的结果，TPR与FPR反映预测算法正反两方面的错误率，通常两方面错误率都小的算法较优。
+</code></pre><h3 id="2-实例数据"><a href="#2-实例数据" class="headerlink" title="2.实例数据"></a>2.实例数据</h3><table>
+<thead>
+<tr>
+<th>Hla peptide</th>
+<th>亲和力真值</th>
+<th>亲和力预测值</th>
+<th>真值lable</th>
+<th>预测值标准化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HLA-A*01:01 YSALRPHEY</td>
+<td>12</td>
+<td>9.41</td>
+<td>1</td>
+<td>0.7928078658665904</td>
+</tr>
+<tr>
+<td>HLA-A*01:01 MTFPVSLEY</td>
+<td>14</td>
+<td>18.19</td>
+<td>1</td>
+<td>0.7318917341670704</td>
+</tr>
+<tr>
+<td>HLA-A\01:01 YTDDYPMYK</td>
+<td>18.94240974</td>
+<td>14.58</td>
+<td>1</td>
+<td>0.7523377414820508</td>
+</tr>
+<tr>
+<td>HLA-A*01:01 ETLEEITGY</td>
+<td>984</td>
+<td>4032.6</td>
+<td>0</td>
+<td>0.23268606897738542</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>第一列：hla allele peptide sequence<br>第二列：实验测出的真值ic50值<br>第三列：算法预测出得ic50值<br>第四列：如果真值&lt;=500，为1；&gt;500，否则为0<br>第五列：算法预测出的ic50值经标准化后的值</p>
+</blockquote>
+<blockquote>
+<p>ps:预测值标准化方法：<br>参照文献：AI-MHC: an allele-integrated deep learning framework for improving Class I &amp; Class II HLA-binding predictions</p>
+</blockquote>
+<h3 id="3-ROC曲线说明"><a href="#3-ROC曲线说明" class="headerlink" title="3.ROC曲线说明"></a>3.ROC曲线说明</h3><pre><code>预测值的阳性Label方法由阈值的选取决定，不同的阈值，阳性集合不同，方法如下：
+选择第五列值进行计算,每次取其中一个数值为阈值（threshold),当第五列中的数值大于或等于这个阈值时,我们认为它为正样本,否则为负样本.记录该阈值下,正负样本个数,计算TPs,FPs,TNs,FNs,再计算TPR,FPR。
+</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/10555678-9f9e3f964915f53e.png" alt="计算公示"></p>
+<blockquote>
+<p>TPs：true positive数，<br>FPs：false positive数，<br>TNs：true negtive数，<br>FNs：false negtive数<br>TPR=TPs/Ps<br>FPR=FPs/Ns<br>Ps: 所有阳性个数<br>Ns: 所有阴性个数<br>真值    P    P    P    N    N    N<br>预测值    P    P    N    P    N    N<br>评价值    TP    TP    FN    FP    TN    TN</p>
+</blockquote>
+<p>TPR, 是阳性预测的准确率，即预测值评价为真阳性的个数（TPs）对所有阳性个数(Ps)的占比。<br>FPR, 是阴性预测的错误率，即预测值评价为假阳性（真值为阴性但预测值为阳性）的个数（FPs）对所有阴性个数(Ns)的占比。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/10555678-842545c7e542cd30.jpg" alt="公式运用"><br>以fpr为x，tpr为y，对每个阈值的(x,y)绘制散点图。</p>
+<p>如：选择0.7523377414820508为阈值：正样本个数为2（0.7928078658665904，0.7523377414820508），负样本个数为2（0.7318917341670704，0.23268606897738542）。FN,TN,TP,FP分别是：1(0.7318917341670704)，1(0.23268606897738542)，2(0.7928078658665904，0.7523377414820508)，0。fpr,tpr分别是：0,0.66。</p>
+<h3 id="4-ROC曲线展示"><a href="#4-ROC曲线展示" class="headerlink" title="4.ROC曲线展示"></a>4.ROC曲线展示</h3><pre><code>箭头指向值为实测数据集中最接近ic50=500时的阈值，以及他们的[frp，tpr]值。
+</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/10555678-c143dce4bd524505.jpg" alt="绘图"></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2018/06/02/auc/" data-title="auc | lalalala1990" data-tsina="" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev">
+ <a href="/2018/11/06/venn/" title="venn">
+  <strong>PREVIOUS:</strong><br>
+  <span>
+  venn</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2018/05/29/notebook/" title="notebook">
+ <strong>NEXT:</strong><br> 
+ <span>notebook
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ROC-AUC评估软件或算法"><span class="toc-number">1.</span> <span class="toc-text">ROC,AUC评估软件或算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-AUC说明"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.AUC说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-实例数据"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.实例数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-ROC曲线说明"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.ROC曲线说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-ROC曲线展示"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.ROC曲线展示</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+
+  <div class="rsspart">
+	<a href="" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer">
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2019 
+		
+		<a href="http://yoursite.com" target="_blank" title="lalalala1990">lalalala1990</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>

@@ -9,13 +9,12 @@
     
     <meta name="author" content="lalalala1990">
     
-    <meta name="description" content="exec介绍exec ‘print “lalalalala” ‘
+    <meta name="description" content="exec介绍exec &amp;apos;print &amp;quot;lalalalala&amp;quot; &amp;apos;
 可执行复杂的语句，python3内置函数
-eval介绍eval(‘pow(2,2)’)
+eval介绍eval(&amp;apos;pow(2,2)&amp;apos;)
 仅可执行字符串表达式
 divmod介绍对两个数字进行整除，并返回商和余数
-divmod(7, 2)返回7%2的商和余数(3,1)
-compile介">
+divmod">
     
     
     
@@ -78,8 +77,8 @@ compile介">
       <a href="http://yoursite.com" title="lalalala1990">lalalala1990</a>
     </p>
   <p class="article-time">
-    <time datetime="2020-04-21T02:23:55.748Z" itemprop="datePublished">2020-04-21</time>
-    Updated:<time datetime="2020-04-21T02:23:55.748Z" itemprop="dateModified">2020-04-21</time>
+    <time datetime="2020-04-21T02:26:05.056Z" itemprop="datePublished">2020-04-21</time>
+    Updated:<time datetime="2020-04-21T02:26:05.057Z" itemprop="dateModified">2020-04-21</time>
     
   </p>
 </header>
@@ -91,17 +90,22 @@ compile介">
 		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#exec介绍"><span class="toc-number">1.</span> <span class="toc-text">exec介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#eval介绍"><span class="toc-number">2.</span> <span class="toc-text">eval介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#divmod介绍"><span class="toc-number">3.</span> <span class="toc-text">divmod介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#compile介绍"><span class="toc-number">4.</span> <span class="toc-text">compile介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#filter介绍"><span class="toc-number">5.</span> <span class="toc-text">filter介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hash介绍"><span class="toc-number">6.</span> <span class="toc-text">hash介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#repr介绍"><span class="toc-number">7.</span> <span class="toc-text">repr介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#slice介绍"><span class="toc-number">8.</span> <span class="toc-text">slice介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import-介绍"><span class="toc-number">9.</span> <span class="toc-text">import 介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pdb介绍"><span class="toc-number">10.</span> <span class="toc-text">pdb介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#非侵入式方法"><span class="toc-number">10.1.</span> <span class="toc-text">非侵入式方法</span></a></li></ol></li></ol>
 		</div>
 		
-		<h2 id="exec介绍"><a href="#exec介绍" class="headerlink" title="exec介绍"></a>exec介绍</h2><p>exec ‘print “lalalalala” ‘</p>
-<p>可执行复杂的语句，python3内置函数</p>
-<h2 id="eval介绍"><a href="#eval介绍" class="headerlink" title="eval介绍"></a>eval介绍</h2><p>eval(‘pow(2,2)’)</p>
-<p>仅可执行字符串表达式</p>
+		<h2 id="exec介绍"><a href="#exec介绍" class="headerlink" title="exec介绍"></a>exec介绍</h2><pre><code>exec &apos;print &quot;lalalalala&quot; &apos;
+</code></pre><p>可执行复杂的语句，python3内置函数</p>
+<h2 id="eval介绍"><a href="#eval介绍" class="headerlink" title="eval介绍"></a>eval介绍</h2><pre><code>eval(&apos;pow(2,2)&apos;)
+</code></pre><p>仅可执行字符串表达式</p>
 <h2 id="divmod介绍"><a href="#divmod介绍" class="headerlink" title="divmod介绍"></a>divmod介绍</h2><p>对两个数字进行整除，并返回商和余数</p>
 <p>divmod(7, 2)返回7%2的商和余数(3,1)</p>
 <h2 id="compile介绍"><a href="#compile介绍" class="headerlink" title="compile介绍"></a>compile介绍</h2><p>compile可将一个字符串编译为字节代码。可以和exec、eval联用，进行语句的执行</p>
-<p>str = “3 * 4 + 5”<br>a = compile(str,’’,’eval’)<br>eval(a)</p>
-<h2 id="filter介绍"><a href="#filter介绍" class="headerlink" title="filter介绍"></a>filter介绍</h2><p>filter() 函数用于过滤序列，过滤掉不符合条件的元素。<br>filter(function, iterable)</p>
-<p>import math<br>def is_sqr(x):<br>    return math.sqrt(x) % 1 == 0<br>newlist = filter(is_sqr, range(1, 101))</p>
-<h2 id="hash介绍"><a href="#hash介绍" class="headerlink" title="hash介绍"></a>hash介绍</h2><p>hash() 用于获取取一个变量的哈希值，可用于校验变量在传输前后是否发生了变化。</p>
+<pre><code>str = &quot;3 * 4 + 5&quot;
+a = compile(str,&apos;&apos;,&apos;eval&apos;)
+eval(a)
+</code></pre><h2 id="filter介绍"><a href="#filter介绍" class="headerlink" title="filter介绍"></a>filter介绍</h2><p>filter() 函数用于过滤序列，过滤掉不符合条件的元素。<br>filter(function, iterable)</p>
+<pre><code>import math
+def is_sqr(x):
+        return math.sqrt(x) % 1 == 0
+    newlist = filter(is_sqr, range(1, 101))
+</code></pre><h2 id="hash介绍"><a href="#hash介绍" class="headerlink" title="hash介绍"></a>hash介绍</h2><p>hash() 用于获取取一个变量的哈希值，可用于校验变量在传输前后是否发生了变化。</p>
 <h2 id="repr介绍"><a href="#repr介绍" class="headerlink" title="repr介绍"></a>repr介绍</h2><p>repr()可返回一个对象的 string 格式</p>
 <p>s = ‘RUNOOB’<br>a=repr(s)<br>print a<br>“‘RUNOOB’”</p>
 <h2 id="slice介绍"><a href="#slice介绍" class="headerlink" title="slice介绍"></a>slice介绍</h2><p>slice进行切片</p>

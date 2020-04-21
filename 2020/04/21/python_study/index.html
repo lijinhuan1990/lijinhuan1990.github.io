@@ -78,8 +78,8 @@ compil">
       <a href="http://yoursite.com" title="lalalala1990">lalalala1990</a>
     </p>
   <p class="article-time">
-    <time datetime="2020-04-21T02:29:50.125Z" itemprop="datePublished">2020-04-21</time>
-    Updated:<time datetime="2020-04-21T02:29:50.126Z" itemprop="dateModified">2020-04-21</time>
+    <time datetime="2020-04-21T02:32:47.628Z" itemprop="datePublished">2020-04-21</time>
+    Updated:<time datetime="2020-04-21T02:32:47.628Z" itemprop="dateModified">2020-04-21</time>
     
   </p>
 </header>
@@ -97,21 +97,21 @@ compil">
 <p>仅可执行字符串表达式</p>
 <h2 id="divmod介绍"><a href="#divmod介绍" class="headerlink" title="divmod介绍"></a>divmod介绍</h2><p>对两个数字进行整除，并返回商和余数</p>
 <p>divmod(7, 2)返回7%2的商和余数(3,1)</p>
-<h2 id="compile介绍"><a href="#compile介绍" class="headerlink" title="compile介绍"></a>compile介绍</h2><p>compile可将一个字符串编译为字节代码。可以和exec、eval联用，进行语句的执行<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="string">"3 * 4 + 5"</span></span><br><span class="line">a = compile(str,<span class="string">''</span>,<span class="string">'eval'</span>)</span><br><span class="line">eval(a)</span><br></pre></td></tr></table></figure></p>
-<h2 id="filter介绍"><a href="#filter介绍" class="headerlink" title="filter介绍"></a>filter介绍</h2><p>filter() 函数用于过滤序列，过滤掉不符合条件的元素。<br>filter(function, iterable)</p>
-<pre><code>import math
-def is_sqr(x):
-        return math.sqrt(x) % 1 == 0
-    newlist = filter(is_sqr, range(1, 101))
-</code></pre><h2 id="hash介绍"><a href="#hash介绍" class="headerlink" title="hash介绍"></a>hash介绍</h2><p>hash() 用于获取取一个变量的哈希值，可用于校验变量在传输前后是否发生了变化。</p>
+<h2 id="compile介绍"><a href="#compile介绍" class="headerlink" title="compile介绍"></a>compile介绍</h2><p>compile可将一个字符串编译为字节代码。可以和exec、eval联用，进行语句的执行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="string">"3 * 4 + 5"</span></span><br><span class="line">a = compile(str,<span class="string">''</span>,<span class="string">'eval'</span>)</span><br><span class="line">eval(a)</span><br></pre></td></tr></table></figure>
+<h2 id="filter介绍"><a href="#filter介绍" class="headerlink" title="filter介绍"></a>filter介绍</h2><p>filter() 函数用于过滤序列，过滤掉不符合条件的元素。<br>filter(function, iterable)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_sqr</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> math.sqrt(x) % <span class="number">1</span> == <span class="number">0</span></span><br><span class="line">newlist = filter(is_sqr, range(<span class="number">1</span>, <span class="number">101</span>))</span><br></pre></td></tr></table></figure></p>
+<h2 id="hash介绍"><a href="#hash介绍" class="headerlink" title="hash介绍"></a>hash介绍</h2><p>hash() 用于获取取一个变量的哈希值，可用于校验变量在传输前后是否发生了变化。</p>
 <h2 id="repr介绍"><a href="#repr介绍" class="headerlink" title="repr介绍"></a>repr介绍</h2><p>repr()可返回一个对象的 string 格式</p>
-<p>s = ‘RUNOOB’<br>a=repr(s)<br>print a<br>“‘RUNOOB’”</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'RUNOOB'</span></span><br><span class="line">a=repr(s)</span><br><span class="line"><span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
+<p>“‘RUNOOB’”</p>
 <h2 id="slice介绍"><a href="#slice介绍" class="headerlink" title="slice介绍"></a>slice介绍</h2><p>slice进行切片</p>
 <p>slice(5)   对前5个进行切片<br>slice(0,4) 对0到4进行切片</p>
 <h2 id="import-介绍"><a href="#import-介绍" class="headerlink" title="import 介绍"></a><em>import</em> 介绍</h2><p><em>import</em>用于动态加载类和函数</p>
-<p><strong>import</strong>(‘a’)        # 导入 a.py 模块</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__import__(<span class="string">'a'</span>)        <span class="comment"># 导入 a.py 模块</span></span><br></pre></td></tr></table></figure>
 <h2 id="pdb介绍"><a href="#pdb介绍" class="headerlink" title="pdb介绍"></a>pdb介绍</h2><p>pdb 用于调试python 代码</p>
-<h3 id="非侵入式方法"><a href="#非侵入式方法" class="headerlink" title="非侵入式方法"></a>非侵入式方法</h3><p>1.启动pdb，进行调试<br>python -m pdb  ic50_value_switch.py<br>2.输入命令l 进行查看代码<br>3.输入命令n单步执行代码<br>4.逐行执行代码比较耗时，可以在特定行前面设置断点，然后运行命令c，可直接运行代码至断点处。运行命令b进行断点设置，如 b 110 即：在110行设置断点。<br>5.cl删除断点<br>6.执行命令a查看函数参数<br>7.p xxx  打印变量xxx的变量值<br>8.q 退出pdb模式</p>
+<h3 id="非侵入式方法"><a href="#非侵入式方法" class="headerlink" title="非侵入式方法"></a>非侵入式方法</h3><p>1.启动pdb，进行调试</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pdb  ic50_value_switch.py</span><br></pre></td></tr></table></figure>
+<p>2.输入命令l 进行查看代码<br>3.输入命令n单步执行代码<br>4.逐行执行代码比较耗时，可以在特定行前面设置断点，然后运行命令c，可直接运行代码至断点处。运行命令b进行断点设置，如 b 110 即：在110行设置断点。<br>5.cl删除断点<br>6.执行命令a查看函数参数<br>7.p xxx  打印变量xxx的变量值<br>8.q 退出pdb模式</p>
   
 	</div>
 		<footer class="article-footer clearfix">

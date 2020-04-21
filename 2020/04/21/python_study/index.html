@@ -1,0 +1,303 @@
+
+ <!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  
+    <title>python学习记录 | lalalala1990</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="lalalala1990">
+    
+    <meta name="description" content="exec介绍exec ‘print “lalalalala” ‘
+可执行复杂的语句，python3内置函数
+eval介绍eval(‘pow(2,2)’)
+仅可执行字符串表达式
+divmod介绍对两个数字进行整除，并返回商和余数
+divmod(7, 2)返回7%2的商和余数(3,1)
+compile介">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="lalalala1990" title="lalalala1990"></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="lalalala1990">lalalala1990</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search">
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope="" itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2020/04/21/python_study/" title="python学习记录" itemprop="url">python学习记录</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="lalalala1990">lalalala1990</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2020-04-21T02:23:55.748Z" itemprop="datePublished">2020-04-21</time>
+    Updated:<time datetime="2020-04-21T02:23:55.748Z" itemprop="dateModified">2020-04-21</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#exec介绍"><span class="toc-number">1.</span> <span class="toc-text">exec介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#eval介绍"><span class="toc-number">2.</span> <span class="toc-text">eval介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#divmod介绍"><span class="toc-number">3.</span> <span class="toc-text">divmod介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#compile介绍"><span class="toc-number">4.</span> <span class="toc-text">compile介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#filter介绍"><span class="toc-number">5.</span> <span class="toc-text">filter介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hash介绍"><span class="toc-number">6.</span> <span class="toc-text">hash介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#repr介绍"><span class="toc-number">7.</span> <span class="toc-text">repr介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#slice介绍"><span class="toc-number">8.</span> <span class="toc-text">slice介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import-介绍"><span class="toc-number">9.</span> <span class="toc-text">import 介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pdb介绍"><span class="toc-number">10.</span> <span class="toc-text">pdb介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#非侵入式方法"><span class="toc-number">10.1.</span> <span class="toc-text">非侵入式方法</span></a></li></ol></li></ol>
+		</div>
+		
+		<h2 id="exec介绍"><a href="#exec介绍" class="headerlink" title="exec介绍"></a>exec介绍</h2><p>exec ‘print “lalalalala” ‘</p>
+<p>可执行复杂的语句，python3内置函数</p>
+<h2 id="eval介绍"><a href="#eval介绍" class="headerlink" title="eval介绍"></a>eval介绍</h2><p>eval(‘pow(2,2)’)</p>
+<p>仅可执行字符串表达式</p>
+<h2 id="divmod介绍"><a href="#divmod介绍" class="headerlink" title="divmod介绍"></a>divmod介绍</h2><p>对两个数字进行整除，并返回商和余数</p>
+<p>divmod(7, 2)返回7%2的商和余数(3,1)</p>
+<h2 id="compile介绍"><a href="#compile介绍" class="headerlink" title="compile介绍"></a>compile介绍</h2><p>compile可将一个字符串编译为字节代码。可以和exec、eval联用，进行语句的执行</p>
+<p>str = “3 * 4 + 5”<br>a = compile(str,’’,’eval’)<br>eval(a)</p>
+<h2 id="filter介绍"><a href="#filter介绍" class="headerlink" title="filter介绍"></a>filter介绍</h2><p>filter() 函数用于过滤序列，过滤掉不符合条件的元素。<br>filter(function, iterable)</p>
+<p>import math<br>def is_sqr(x):<br>    return math.sqrt(x) % 1 == 0<br>newlist = filter(is_sqr, range(1, 101))</p>
+<h2 id="hash介绍"><a href="#hash介绍" class="headerlink" title="hash介绍"></a>hash介绍</h2><p>hash() 用于获取取一个变量的哈希值，可用于校验变量在传输前后是否发生了变化。</p>
+<h2 id="repr介绍"><a href="#repr介绍" class="headerlink" title="repr介绍"></a>repr介绍</h2><p>repr()可返回一个对象的 string 格式</p>
+<p>s = ‘RUNOOB’<br>a=repr(s)<br>print a<br>“‘RUNOOB’”</p>
+<h2 id="slice介绍"><a href="#slice介绍" class="headerlink" title="slice介绍"></a>slice介绍</h2><p>slice进行切片</p>
+<p>slice(5)   对前5个进行切片<br>slice(0,4) 对0到4进行切片</p>
+<h2 id="import-介绍"><a href="#import-介绍" class="headerlink" title="import 介绍"></a><em>import</em> 介绍</h2><p><em>import</em>用于动态加载类和函数</p>
+<p><strong>import</strong>(‘a’)        # 导入 a.py 模块</p>
+<h2 id="pdb介绍"><a href="#pdb介绍" class="headerlink" title="pdb介绍"></a>pdb介绍</h2><p>pdb 用于调试python 代码</p>
+<h3 id="非侵入式方法"><a href="#非侵入式方法" class="headerlink" title="非侵入式方法"></a>非侵入式方法</h3><p>1.启动pdb，进行调试<br>python -m pdb  ic50_value_switch.py<br>2.输入命令l 进行查看代码<br>3.输入命令n单步执行代码<br>4.逐行执行代码比较耗时，可以在特定行前面设置断点，然后运行命令c，可直接运行代码至断点处。运行命令b进行断点设置，如 b 110 即：在110行设置断点。<br>5.cl删除断点<br>6.执行命令a查看函数参数<br>7.p xxx  打印变量xxx的变量值<br>8.q 退出pdb模式</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2020/04/21/python_study/" data-title="python学习记录 | lalalala1990" data-tsina="" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2020/03/04/work_2019/" title="2019 工作记录">
+ <strong>NEXT:</strong><br> 
+ <span>2019 工作记录
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#exec介绍"><span class="toc-number">1.</span> <span class="toc-text">exec介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#eval介绍"><span class="toc-number">2.</span> <span class="toc-text">eval介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#divmod介绍"><span class="toc-number">3.</span> <span class="toc-text">divmod介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#compile介绍"><span class="toc-number">4.</span> <span class="toc-text">compile介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#filter介绍"><span class="toc-number">5.</span> <span class="toc-text">filter介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hash介绍"><span class="toc-number">6.</span> <span class="toc-text">hash介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#repr介绍"><span class="toc-number">7.</span> <span class="toc-text">repr介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#slice介绍"><span class="toc-number">8.</span> <span class="toc-text">slice介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import-介绍"><span class="toc-number">9.</span> <span class="toc-text">import 介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pdb介绍"><span class="toc-number">10.</span> <span class="toc-text">pdb介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#非侵入式方法"><span class="toc-number">10.1.</span> <span class="toc-text">非侵入式方法</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+
+  <div class="rsspart">
+	<a href="" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer">
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2020 
+		
+		<a href="http://yoursite.com" target="_blank" title="lalalala1990">lalalala1990</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>
